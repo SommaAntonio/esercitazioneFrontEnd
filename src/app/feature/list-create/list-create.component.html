@@ -1,0 +1,19 @@
+<!--qui sfruttiamo l'Ngform per mandare dei dati al ts e elaborarli tramite il service-->
+<form #formCreazione="ngForm" (submit)="newList(formCreazione)">
+    <!--la label per far vedere a schermo un testo, poi nel input sotto a ogni cmpo corrisponde
+    un nome nel ts che permette di farne la creazione -->
+    <label>todo </label>
+    <input type="text" name="todo" placeholder=todo #refTodo="ngModel" [ngModel]="todo">
+    <br>
+    <label>stato </label>
+    <input type="text" name="stato" placeholder=stato #refStato="ngModel" [ngModel]="stato">
+    <br>
+    <label>dataInizio </label>
+    <input type="date" name="dataInizio" placeholder=dataInizio #refDataInizio="ngModel" [ngModel]="dataInizio">
+    <br>
+    <label>scadenza </label>
+    <input type="date" name="scadenza" placeholder=scadenza #refScadenza="ngModel" [ngModel]="scadenza">
+    <br>
+    <!--con la submit attiviamo la funzione messa sopra e mandiamo i dati al ts che li elabora-->
+    <input type="submit" id="nuovo" name="nuovo" value="nuovo">
+</form>

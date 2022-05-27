@@ -1,0 +1,26 @@
+<table *ngIf="!loding">
+    <!--con ngIf faccio in modo che la tabella sia creata solo dopo che il loading sia finito-->
+    <tr>
+        <th>todo</th>
+        <th>stato</th>
+        <th>dataInizio</th>
+        <th>dataScadenza</th>
+
+    </tr>
+    <!--ngFor serve per cilare la struttura qui sotto dove si trovano poi i dati del record,
+    per ogni record creera una nuova righa con i suoi dati e i bottoni modifica ed elimina-->
+    <tr *ngFor="let todo of listofTodo">
+        <td>{{todo.todo}}</td>
+        <td>{{todo.stato}}</td>
+        <td>{{todo.datainizio | date: 'dd/MM/yyyy'}}</td>
+        <td>{{todo.scadenza | date: 'dd/MM/yyyy'}}</td>
+        <!--qua si trovano le due funzioni che tramite il (click) permettono di attivare un evento al click 
+            portando a una delle due funzioni nel ts-->
+        <td><input type="button" id="elimina" name="elimina" (click)="elimina(todo.id)" value="elimina"></td>
+        <input type="button" id="modifica" name="modifica" (click)="scelta(todo.id)" value="modifica">
+    </tr>
+
+</table>
+<br>
+<input type="button" id="creazione" name="creazione" (click)="toCreate()" value="new">
+<input type="submit" id="search" name="search" value="search" (click)="query()">

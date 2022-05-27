@@ -1,0 +1,15 @@
+{
+    "lista": [
+        {
+            "listTodo": [
+                {
+                    "id": 1,
+                    "todo": "prova1",
+                    "stato": "done",
+                    "dataInizio": "2022-05-07",
+                    "scadenza": "2022-05-08"
+                }
+            ]
+        }
+    ]
+}

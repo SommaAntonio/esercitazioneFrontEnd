@@ -1,0 +1,28 @@
+<!--con questo form si chiede quale parola si vuole cercare, si salva e si cerca 
+    per poi riempore la table  e mettere a false il loding-->
+<form #searchForm="ngForm" (submit)="search(searchForm)">
+    <label>scadenza</label>
+    <input type="text" name="word" placeholder=searchBar #refWord="ngModel" [ngModel]="word">
+
+    <br>
+    <input type="submit" id="search" name="search" value="search">
+</form>
+<!--con ngIf faccio in modo che la tabella sia creata solo dopo che il loading sia finito-->
+<table *ngIf="!loding">
+    <tr>
+        <th>todo</th>
+        <th>stato</th>
+        <th>dataInizio</th>
+        <th>dataScadenza</th>
+
+    </tr>
+    <!--ngFor serve per cilare la struttura qui sotto dove si trovano poi i dati del record,
+    per ogni record creera una nuova righa con i suoi dati e i bottoni modifica ed elimina-->
+    <tr *ngFor="let result of listofTodoSearch">
+        <td>{{result.todo}}</td>
+        <td>{{result.stato}}</td>
+        <td>{{result.datainizio | date: 'dd/MM/yyyy'}}</td>
+        <td>{{result.scadenza | date: 'dd/MM/yyyy'}}</td>
+    </tr>
+    <input type="button" name="undo" id="undo" (click)="undo()">
+</table>

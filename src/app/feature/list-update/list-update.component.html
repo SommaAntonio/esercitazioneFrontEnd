@@ -1,0 +1,19 @@
+<!--con questo form prendiamo le informazioni che ci da l'utente lasciando in placeholder quelle vecchie-->
+<form #updateForm="ngForm" (submit)="modifica(updateForm)">
+
+    <label>todo </label>
+    <input type="text" name="todo" placeholder={{lista.todo}} #refTodo="ngModel" [ngModel]="todo">
+    <br>
+    <label>stato </label>
+    <input type="text" name="stato" placeholder={{lista.stato}} #refStato="ngModel" [ngModel]="stato">
+    <br>
+    <label>data Inizio </label>
+    <input type="date" name="dataInizio" placeholder={{lista.datainizio}} #refDataInizio="ngModel"
+        [ngModel]="dataInizio">
+    <br>
+    <label>scadenza</label>
+    <input type="date" name="scadenza" placeholder={{lista.scadenza}} #refScadenza="ngModel" [ngModel]="scadenza">
+    <br>
+    <input type="submit" id="modifica" name="modifica" value="modifica">
+
+</form>
